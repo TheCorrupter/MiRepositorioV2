@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script src="js/jquery.js" type="text/javascript"></script>
+        <script>
+            $(function () {
+                $("#enviar").on("click",function () {
+
+                    $.ajax({
+                        url: 'DatoServlet',
+                        type: 'POST',
+                        data: $('#formx').serialize(),
+                        success:function(res){    
+                            $("#res").html("<h1>"+res+"</h1>");
+                            $("#res").css("color","red")
+                            }
+                    }) ;   
+                }); //fin del evento click        
+            });//fin de la funcion anonima
+
+           
+        </script>
+    </head>
+
+    <body>
+        <form id="formx" method="post"> 
+            Pais  <input type="text" name="nom">
+            <button id="enviar" type="button"> Enviar</button>
+             
+        </form>
+        <div id="res">
+            
+        </div>
+    </body>
+</html>
