@@ -43,7 +43,7 @@
         </form>
         <br><br>
         <hr>
-        <table id="tabdatos" >
+        <table id="tabdatos" border="1">
             
         </table>
     </body>
